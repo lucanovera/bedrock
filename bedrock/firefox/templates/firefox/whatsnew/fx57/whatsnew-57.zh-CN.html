@@ -1,0 +1,65 @@
+{# This Source Code Form is subject to the terms of the Mozilla Public
+ # License, v. 2.0. If a copy of the MPL was not distributed with this
+ # file, You can obtain one at http://mozilla.org/MPL/2.0/. -#}
+
+{% add_lang_files "firefox/whatsnew_57" %}
+
+{% extends "firefox/whatsnew/base-pebbles.html" %}
+
+{% block page_title %}{{ _('体验崭新的 Firefox：快，只为更好！') }}{% endblock %}
+
+{% block page_css %}
+  {% stylesheet 'firefox-whatsnew-57' %}
+{% endblock %}
+
+{% block body_class %}quantum-letter{% endblock %}
+
+{% block site_header %}{% endblock %}
+
+{% block content %}
+<header class="section page-head">
+  <div class="content">
+    {{ high_res_img('logos/firefox/logo-quantum-wordmark-white.png', {'alt': 'Firefox', 'width': '200', 'height': '75', 'class': 'firefox-logo'}) }}
+  </div>
+</header>
+
+<article class="section page-body">
+  <div class="content">
+    <h1>{{ self.page_title() }}</h1>
+
+    <p>
+    {% trans %}
+      今天，我们很高兴地向大家介绍全新的 Firefox 浏览器——Firefox Quantum。
+    {% endtrans %}
+    </p>
+
+    <p>
+    {% trans %}
+      首先，您肯定会注意到的是，全新的 Firefox 有着风驰电掣般的速度。在实际体验中，事实上，您将感受到的速度比一年前的版本快两一倍的速度。与此同时，它的性能也更为更加强大。我们专注于探索用户如何利用互联网无拘无束地观看、收听、创作和游戏娱乐，于是开始着手重新打造了 Firefox。我们很高兴能为大家提供这样一个有着全新体验的浏览器——现代、极速快速、高效。相信您一定也一定会深有同感：这将是您未来互联网体验中的一大飞跃。
+    {% endtrans %}
+    </p>
+
+    <p>
+    {% trans %}
+      当在您使用 Firefox 时，您同时也在为为我们确保保护互联网为一项作为开放的的、人人可用的全球公共资源做出了作出贡献。作为一个独立的非营利组织，Mozilla 自 2003 年以来便一直致力于打造由用户自己控制在线生活的产品，并持续推动开放技术和公共政策，促进加强互联网的健康发展。我们始终以您为本！
+    {% endtrans %}
+    </p>
+
+    <p>
+    {% trans firefox=url('firefox') %}
+      今天，我谨代表 Mozilla 全球社区，非常自豪地向您介绍这款<a href="{{ firefox }}">崭新的 Firefox</a>。快，只为更好！
+    {% endtrans %}
+    </p>
+
+    <p class="signoff">
+      <img src="{{ static('/media/img/firefox/whatsnew_57/cbeard-signature.png') }}" alt="" width="120" height="60">
+      Chris Beard <br>Mozilla 首席执行官
+    </p>
+
+  </div>
+</article>
+{% endblock %}
+
+{% block email_form %}{% endblock%}
+
+{% block js %}{% endblock %}

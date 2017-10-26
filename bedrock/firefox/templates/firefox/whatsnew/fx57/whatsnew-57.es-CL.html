@@ -1,0 +1,71 @@
+{# This Source Code Form is subject to the terms of the Mozilla Public
+ # License, v. 2.0. If a copy of the MPL was not distributed with this
+ # file, You can obtain one at http://mozilla.org/MPL/2.0/. -#}
+
+{% add_lang_files "firefox/whatsnew_57" %}
+
+{% extends "firefox/whatsnew/base-pebbles.html" %}
+
+{% block page_title %}{{ _('El nuevo Firefox. Más rápido, para siempre.') }}{% endblock %}
+
+{% block page_css %}
+  {% stylesheet 'firefox-whatsnew-57' %}
+{% endblock %}
+
+{% block body_class %}quantum-letter{% endblock %}
+
+{% block site_header %}{% endblock %}
+
+{% block content %}
+<header class="section page-head">
+  <div class="content">
+    {{ high_res_img('logos/firefox/logo-quantum-wordmark-white.png', {'alt': 'Firefox', 'width': '200', 'height': '75', 'class': 'firefox-logo'}) }}
+  </div>
+</header>
+
+<article class="section page-body">
+  <div class="content">
+    <h1>{{ self.page_title() }}</h1>
+
+    <p>
+    {% trans %}
+      Estamos entusiasmados con la presentación hoy de nuestro nuevo navegador, Firefox Quantum.
+    {% endtrans %}
+    </p>
+
+    <p>
+    {% trans %}
+      Lo primero que notarán es que el nuevo Firefox es increíblemente rápido. De hecho, es dos veces más rápido que hace un año. Este nuevo navegador es también más potente. Hemos reconstruido Firefox desde sus cimientos para enfocarnos en cómo utilizan la web para ver, escuchar, crear y jugar sin límites. Nos complace ofrecerles un navegador que se ve y se siente totalmente diferente: más moderno, más rápido y más eficiente. Creemos que van a estar de acuerdo: es un salto de niveles cuánticos en cómo experimentamos el internet.
+    {% endtrans %}
+    </p>
+
+    <p>
+    {% trans %}
+      Cuando utilizan Firefox también están contribuyendo a un movimiento que asegura que Internet siga siendo un recurso público global, siempre abierto y accesible a todos.
+    {% endtrans %}
+    </p>
+
+    <p>
+    {% trans %}
+      Como una organización independiente sin ánimo de lucro, desde 2003 estamos comprometidos con construir productos que les permiten asumir el control de sus vidas online, a desarrollar una tecnología abierta y con políticas públicas que promuevan un Internet más saludable. Les ponemos en el centro de todo lo que hacemos.
+    {% endtrans %}
+    </p>
+
+    <p>
+    {% trans firefox=url('firefox') %}
+      En nombre de la comunidad global de Mozilla, nos enorgullece presentar <a href="{{ firefox }}">el nuevo Firefox</a>. Más rápido, para siempre.
+    {% endtrans %}
+    </p>
+
+    <p class="signoff">
+      <img src="{{ static('/media/img/firefox/whatsnew_57/cbeard-signature.png') }}" alt="" width="120" height="60">
+      Chris Beard <br>CEO, Mozilla
+    </p>
+
+  </div>
+</article>
+{% endblock %}
+
+{% block email_form %}{% endblock%}
+
+{% block js %}{% endblock %}
