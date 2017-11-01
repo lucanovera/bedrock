@@ -1,0 +1,43 @@
+{# This Source Code Form is subject to the terms of the Mozilla Public
+ # License, v. 2.0. If a copy of the MPL was not distributed with this
+ # file, You can obtain one at http://mozilla.org/MPL/2.0/. -#}
+
+{% extends "mozorg/home/home-new.html" %}
+
+{% add_lang_files "mozorg/home/index-2016" %}
+
+{% block page_css %}
+  {{ super() }}
+  {% stylesheet 'home-quantum' %}
+{% endblock %}
+
+{% block intro %}
+<section id="quantum">
+  <div class="content">
+    <div class="intro-content">
+      <h2>{{ _('Browse faster. For good.') }}</h2>
+
+      <h3>{{ _('With 2x the speed, built-in privacy protection and Mozilla behind it, the new Firefox is fast for good.') }}</h3>
+
+      {{ download_firefox(dom_id='download-intro', button_color='button-arrow', download_location='primary cta') }}
+    </div>
+  </div>
+</section>{#--/#quantum--#}
+
+<section id="mozilla">
+  <div class="content">
+    <div class="intro-content">
+      <h2>
+        <span>{{ _('We make the internet safer, healthier and faster for good.') }}</span>
+      </h2>
+      <h3>
+      {% trans %}
+        Mozilla is the not-for-profit behind Firefox, the original alternative
+        browser. We create products and policy to keep the internet in service
+        of people, not profits.
+      {% endtrans %}
+      </h3>
+    </div>
+  </div>{#--/.content--#}
+</section>
+{% endblock %}

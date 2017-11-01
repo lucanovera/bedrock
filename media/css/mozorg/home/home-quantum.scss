@@ -1,0 +1,45 @@
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+@import '../../pebbles/includes/lib';
+
+#quantum {
+    background: #0060df;
+    background: url('/media/img/firefox/quantum/fox-tail-header.png') center center no-repeat,
+                linear-gradient(to bottom, #0060df 7%, #0095ff 100%);
+    color: #fff;
+}
+
+#mozilla {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 40px;
+}
+
+// only English can handle zilla slab
+[lang="en"] #mozilla h2 {
+    @include zilla-slab();
+
+    span {
+        background: #000;
+        color: #fff;
+    }
+}
+
+.intro-content {
+    @media #{$mq-tablet} {
+        width: 50%;
+    }
+}
+
+#mozilla {
+    @media #{$mq-tablet} {
+        .content {
+            @include clearfix;
+        }
+
+        .intro-content {
+            float: right;
+        }
+    }
+}

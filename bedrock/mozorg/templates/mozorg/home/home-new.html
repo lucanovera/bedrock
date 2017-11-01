@@ -45,6 +45,7 @@
 
 {% block content %}
 <main role="main" class="main wrapper">
+  {% block intro %}
   <section class="section section-intro" id="intro">
     <div class="content" id="intro-wrapper">
       <div id="intro-mozilla">
@@ -99,8 +100,11 @@
       </div>{#--/#intro-promo--#}
     </div>{#--/#intro-wrapper--#}
   </section>
+  {% endblock %}
 
-  {% include 'mozorg/home/includes/fx-quantum-promo.html' %}
+  {% if not switch('firefox-update-notification') %}
+    {% include 'mozorg/home/includes/fx-quantum-promo.html' %}
+  {% endif %}
 
   <section class="section" id="impact-innovate-wrapper">
     <section class="section-wrapper" id="impact">
@@ -174,8 +178,8 @@
     <ul class="content">
       <li>
         <a class="add-ons" rel="external" href="https://addons.mozilla.org/">
-          <h3>{{ _('Add-ons') }}</h3>
-          <p>{{ _('Compare prices, check the weather, listen to music, send a tweet and more right from Firefox.') }}</p>
+          <h3>{{ _('Extensions') }}</h3>
+          <p>{{ _('Personalize Firefox with your favorite extras like password managers, ad blockers and more.') }}</p>
         </a>
       </li>
       <li>
